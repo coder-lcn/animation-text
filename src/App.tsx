@@ -2,6 +2,7 @@ import { TransitionEventHandler, useEffect, useRef, useState } from "react";
 import "./App.css";
 
 const App = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const words = useRef(["a", "b"]);
   const [index, setIndex] = useState(-1);
 
@@ -16,14 +17,10 @@ const App = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container" ref={containerRef}>
       {words.current.map((item, i) => {
         return (
-          <div
-            key={i}
-            className={`item ${i === index ? "active" : ""}`}
-            onTransitionEnd={onTransitionEnd}
-          >
+          <div key={i} className="item" onTransitionEnd={onTransitionEnd}>
             {item.split("").map((item, j) => {
               return <span key={i + j}>{item}</span>;
             })}

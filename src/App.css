@@ -14,7 +14,6 @@
   transform: scale(1, 2);
 }
 
-.item span {}
 
 .item.active {
   top: 0px;
