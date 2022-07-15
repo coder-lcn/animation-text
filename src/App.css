@@ -1,0 +1,22 @@
+.container {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #ddd;
+  position: relative;
+}
+
+.item {
+  position: absolute;
+  font-size: 2.4em;
+  transition: all 1s ease-in-out;
+  top: -100px;
+  transform: scale(1, 2);
+}
+
+.item span {}
+
+.item.active {
+  top: 0px;
+  transform: scale(1, 1);
+}
