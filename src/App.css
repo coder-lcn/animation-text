@@ -4,18 +4,34 @@
   line-height: 40px;
   background-color: #ddd;
   position: relative;
+
+  --distance-top: -60px;
+  --distance-bottom: 60px;
 }
 
 .item {
   position: absolute;
   font-size: 2.4em;
-  transition: all 1s ease-in-out;
-  top: -100px;
-  transform: scale(1, 2);
+}
+
+.item span {
+  position: relative;
+}
+
+i {
+  transition: top 0.2s linear;
+  display: inline-block;
+  font-style: normal;
+  transform: translate(0, var(--distance-top));
 }
 
 
-.item.active {
-  top: 0px;
-  transform: scale(1, 1);
+.item span.show i {
+  transition: all 1s ease-in-out;
+  transform: translate(0, 0);
+}
+
+.item span.hide i {
+  transition: all 1s ease-in-out;
+  transform: translate(0, var(--distance-bottom));
 }
