@@ -1,12 +1,12 @@
 import { TransitionEventHandler, useEffect, useRef, useState } from "react";
 import "./App.css";
 
-const wait = () => new Promise((resolve) => setTimeout(resolve, 200));
+const wait = () => new Promise((resolve) => setTimeout(resolve, 100));
 
 const App = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const words = useRef(["hello", "world"]);
-  const [index, setIndex] = useState(-1);
+  const words = useRef(["hello", "world", "hahah"]);
+  const [index, setIndex] = useState(0);
   const lastIndex = useRef(-1);
 
   const onTransitionEnd: TransitionEventHandler<HTMLDivElement> = (e) => {
@@ -41,6 +41,9 @@ const App = () => {
   };
 
   useEffect(() => {
+    lastIndex.current = index - 1;
+    if (lastIndex.current < 0) lastIndex.current = words.current.length - 1;
+
     setTimeout(() => {
       let i = index;
       i++;
@@ -53,8 +56,6 @@ const App = () => {
     if (index < 0) return;
     const target = containerRef.current;
     if (!target) return;
-
-    console.log(index);
 
     const item = target.children[index] as HTMLDivElement;
     action(item);

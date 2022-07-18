@@ -1,9 +1,9 @@
 .container {
-  width: 100px;
+  width: 140px;
   height: 40px;
   line-height: 40px;
-  background-color: #ddd;
   position: relative;
+  overflow: hidden;
 
   --distance-top: -60px;
   --distance-bottom: 60px;
@@ -19,19 +19,19 @@
 }
 
 i {
-  transition: top 0.2s linear;
   display: inline-block;
   font-style: normal;
-  transform: translate(0, var(--distance-top));
+  transform: scale(1, 4) translate(0, var(--distance-top));
+  font-weight: bold;
 }
 
 
 .item span.show i {
-  transition: all 1s ease-in-out;
-  transform: translate(0, 0);
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1, 1) translate(0, 0);
 }
 
 .item span.hide i {
-  transition: all 1s ease-in-out;
-  transform: translate(0, var(--distance-bottom));
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1, 0.5) translate(0, var(--distance-bottom));
 }
