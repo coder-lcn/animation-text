@@ -61,6 +61,7 @@ const App = () => {
     if (lastChildren) {
       const loss = Array.from(lastChildren.children).filter(item => item.classList.contains('show'))
       for (const nextSpan of loss) {
+        await wait(letter_wait);
         nextSpan.classList.remove("show");
         nextSpan.classList.add("hide");
       }
