@@ -7,7 +7,7 @@ const word_wait = 200;
 // 切换到下一个字母的间隔时间
 const letter_wait = 100;
 
-const wait = (t: number) => new Promise(resolve => setTimeout(resolve, t))
+const wait = (t: number) => new Promise(resolve => setTimeout(resolve, t));
 
 const App = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -67,18 +67,6 @@ const App = () => {
       }
     }
   };
-
-  // useEffect(() => {
-  //   lastIndex.current = index - 1;
-  //   if (lastIndex.current < 0) lastIndex.current = words.current.length - 1;
-
-  //   setTimeout(() => {
-  //     let i = index;
-  //     i++;
-  //     i %= words.current.length;
-  //     setIndex(i);
-  //   }, 2000);
-  // }, [index]);
 
   useEffect(() => {
     indexRef.current = index;
