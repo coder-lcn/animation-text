@@ -5,7 +5,7 @@ import "./App.css";
 const word_wait = 1500;
 
 // 切换到下一个字母的间隔时间
-const letter_wait = 50;
+const letter_wait = 30;
 
 const wait = (t: number) => new Promise(resolve => setTimeout(resolve, t));
 
