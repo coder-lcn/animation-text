@@ -2,7 +2,7 @@ import { TransitionEventHandler, useCallback, useEffect, useRef, useState } from
 import "./App.css";
 
 // 开始切换下一个单词的间隔时间
-const word_wait = 500;
+const word_wait = 1500;
 
 // 切换到下一个字母的间隔时间
 const letter_wait = 50;
@@ -10,7 +10,7 @@ const letter_wait = 50;
 const wait = (t: number) => new Promise(resolve => setTimeout(resolve, t));
 
 const App = () => {
-  const words = useRef(["冯爱景", "是个", "大漂亮"]);
+  const words = useRef(["Degens", "Flippers", "Collectors", "Sweepers"]);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [index, setIndex] = useState(0);
   const lastIndex = useRef(-1);
