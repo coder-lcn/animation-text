@@ -2,10 +2,10 @@ import { TransitionEventHandler, useCallback, useEffect, useRef, useState } from
 import "./App.css";
 
 // 开始切换下一个单词的间隔时间
-const word_wait = 200;
+const word_wait = 500;
 
 // 切换到下一个字母的间隔时间
-const letter_wait = 100;
+const letter_wait = 50;
 
 const wait = (t: number) => new Promise(resolve => setTimeout(resolve, t));
 
