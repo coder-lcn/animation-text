@@ -11,7 +11,7 @@ const wait = (t: number) => new Promise(resolve => setTimeout(resolve, t));
 
 const App = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const words = useRef(["hellooooo", "world", "hahah"]);
+  const words = useRef(["冯爱景", "是个", "大漂亮"]);
   const [index, setIndex] = useState(0);
   const lastIndex = useRef(-1);
   const indexRef = useRef(0);
